@@ -6,8 +6,6 @@ import cats.implicits._
 object TaglessFinalExercise extends IOApp {
   case class Image(bytes: List[Byte])
 
-  type cc = Sync
-
   trait ImagesService[F[_]] {
     def fetchHttp(n: Int): F[List[Image]]
     def fetchDb(n: Int): F[List[Image]]
